@@ -38,7 +38,7 @@ const handleScroll = (id: string) => {
 
 const handleScrollOrNavigate = (id: string) => {
   if (pathname !== "/") {
-    // Tambahkan query target
+    // Add target query
     router.push(`/?scrollTo=${id}`);
   } else {
     const el = document.getElementById(id);
@@ -51,8 +51,9 @@ const handleScrollOrNavigate = (id: string) => {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background backdrop-blur supports-[backdrop-filter]:bg-background/80">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           
-          {/* Logo kiri */}
+          {/* Left logo */}
 <div className="flex-shrink-0 w-10 h-10 rounded-full overflow-hidden">
+  <Link href="/">
   {logo && (
     <Image
       src={logo}
@@ -62,6 +63,7 @@ const handleScrollOrNavigate = (id: string) => {
       className="object-cover w-full h-full"
     />
   )}
+  </Link>
 </div>
 
           {/* Desktop Navigation */}
@@ -109,7 +111,7 @@ const handleScrollOrNavigate = (id: string) => {
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
-            {/* Switch hanya tampil di desktop */}
+            {/* Switch only shown on desktop */}
             <div className="hidden md:flex">
               <ModeToggle />
             </div>

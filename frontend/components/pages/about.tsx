@@ -56,25 +56,27 @@ export default function AboutUs({
           <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-8 text-center">
             Meet Our Team
           </h3>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid gap-8 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
             {teams?.map((member) => (
-              <div
-                key={member.name}
-                className="text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
-              >
-                <Image
-                  src={member.pict.asset.url}
-                  alt={member.name}
-                  width={200}
-                  height={200}
-                  className="rounded-full mx-auto shadow-lg"
-                  priority={false}
-                />
-                <h4 className="mt-4 font-bold text-lg text-[var(--foreground)]">
-                  {member.name}
-                </h4>
-                <p className="text-[var(--muted-foreground)]">{member.role}</p>
-              </div>
+            <div
+  key={member.name}
+  className="bg-[var(--card)] p-6 rounded-2xl shadow-md 
+             text-center 
+             transform transition duration-300 
+             hover:scale-105 hover:shadow-xl"
+>
+  <Image
+    src={member.pict.asset.url}
+    alt={member.name}
+    width={200}
+    height={200}
+    className="rounded-full mx-auto shadow-lg object-cover w-32 h-32"
+  />
+  <h4 className="mt-4 font-bold text-lg text-[var(--foreground)]">
+    {member.name}
+  </h4>
+  <p className="text-[var(--muted-foreground)]">{member.role}</p>
+</div>
             ))}
           </div>
         </div>
@@ -107,17 +109,24 @@ export default function AboutUs({
           <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-6">
             Why Choose Us?
           </h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-8 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
             {whyChooseUs?.map((why) => (
               <div
-                key={why.title}
-                className="bg-[var(--card)] p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
-              >
-                <h4 className="font-bold text-lg text-[var(--foreground)] mb-2">
-                  {why.title}
-                </h4>
-                <p className="text-[var(--muted-foreground)]">{why.content}</p>
-              </div>
+  key={why.title}
+  className="bg-[var(--card)] p-6 rounded-2xl shadow-md 
+             flex flex-col 
+             transition duration-300 
+             hover:scale-105 hover:shadow-xl"
+>
+  <h4 className="font-bold text-lg text-[var(--foreground)] mb-2 break-words">
+    {why.title}
+  </h4>
+
+  <p className="text-[var(--muted-foreground)] text-sm md:text-base 
+                break-words flex-grow">
+    {why.content}
+  </p>
+</div>
             ))}
           </div>
         </div>

@@ -19,8 +19,7 @@ const footer = await getFooterData();
   <body className="min-h-screen flex flex-col">
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="light"
       disableTransitionOnChange
     >
        <Header logo={logo} />

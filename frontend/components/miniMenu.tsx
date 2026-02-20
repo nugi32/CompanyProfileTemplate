@@ -26,9 +26,9 @@ export default function MiniMenu({
   }, [pathname, scrollTarget]);
 
 const handleScrollOrNavigate = (id: string) => {
-  onClose(); // tutup menu
+  onClose(); // close menu
   if (pathname !== "/") {
-    // Tambahkan query target
+    // Add target query
     router.push(`/?scrollTo=${id}`);
   } else {
     const el = document.getElementById(id);

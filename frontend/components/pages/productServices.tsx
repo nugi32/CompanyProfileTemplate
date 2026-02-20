@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ServiceShort {
   name: string;
@@ -30,23 +31,34 @@ export default function ProductServices({ subContent, contentShort }: ProductSer
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
-          {contentShort?.map((product) => (
-            <div
-              key={product.name}
-              className="bg-[var(--card)] p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
-            >
-              <Image 
-                src={product.image.asset.url}
-                alt={product.name} 
-                width={400} 
-                height={250} 
-                className="rounded-lg mb-4"
-              />
-              <h3 className="font-bold text-lg text-[var(--foreground)] mb-2">{product.name}</h3>
-              <p className="text-[var(--muted-foreground)]">{product.description}</p>
-            </div>
-          ))}
+        <div className="grid gap-8 grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
+{contentShort?.map((product, index) => (
+  <Link 
+  key={index}
+    href={`/services`}
+    className="block"
+  >
+    <div
+      className="bg-[var(--card)] p-6 rounded-lg shadow-md 
+                 transform transition duration-300 
+                 hover:scale-105 hover:shadow-xl cursor-pointer"
+    >
+      <Image 
+        src={product.image.asset.url}
+        alt={product.name} 
+        width={400} 
+        height={250} 
+        className="rounded-lg mb-4"
+      />
+      <h3 className="font-bold text-lg text-[var(--foreground)] mb-2">
+        {product.name}
+      </h3>
+      <p className="text-[var(--muted-foreground)]">
+        {product.description}
+      </p>
+    </div>
+  </Link>
+))}
         </div>
       </div>
     </section>
