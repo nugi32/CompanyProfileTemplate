@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'cms',
 
-  projectId: '250iq2rp',
-  dataset: 'production',
+  projectId: '',
+  dataset: '',
 
   plugins: [structureTool(), visionTool()],
 
