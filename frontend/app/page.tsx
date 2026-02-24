@@ -1,4 +1,4 @@
-
+export const revalidate = 60;
 // components
 import LandingPage from "@/components/pages/landingPage";
 import About from "@/components/pages/about";

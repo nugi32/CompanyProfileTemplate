@@ -36,7 +36,7 @@ export default defineType({
             }),
             defineField({
               name: 'image',
-              title: 'Image URL',
+              title: 'Image',
               type: 'image',
               options: {
         hotspot: true,
@@ -78,7 +78,7 @@ export default defineType({
             }),
             defineField({
               name: 'image',
-              title: 'Image URL',
+              title: 'Image',
               type: 'image',
               options: {
         hotspot: true,

@@ -1,3 +1,4 @@
+export const revalidate = 60;
 import ProductsServicesSection from '@/components/ProductsServicesSection';
 import { getProductServicesData } from '@/fetchData/ProductServices';
 
